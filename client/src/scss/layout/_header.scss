@@ -1,0 +1,24 @@
+/**
+ * __HEADER__
+ *
+ * Définit le style spécifique de l'en-tête (<header />)
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
+.header {
+  flex-direction: column;
+
+  h1 {
+    @include m.sizes('oversize');
+
+    font-family: v.$font-serif;
+  }
+
+  &__scroll {
+    @include m.sizes('biggest');
+
+    margin-top: f.add-line(8);
+  }
+}

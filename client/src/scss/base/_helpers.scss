@@ -1,0 +1,19 @@
+/**
+ * __HELPERS__
+ *
+ * Regroupe les styles globaux / généraux du site
+ */
+@use '../abstracts/variables' as v;
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.small-only {
+  @media (min-width: v.$bp-large) {
+    display: none;
+  }
+}

@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  frontend:
+    container_name: memory-frontend
+    command: yarn start
+    build: ./client
+    volumes:
+      - ./client/src:/memory-app/client/src
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: development
+    links:
+      - backend
+    depends_on:
+      - backend
+  backend:
+    container_name: memory-backend
+    command: yarn server
+    build: ./server
+    volumes:
+      - ./server/src:/memory-app/server/src
+    ports:
+      - 8080:8080
+    environment:
+      NODE_ENV: development

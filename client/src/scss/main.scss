@@ -1,0 +1,23 @@
+@use "../settings.json";
+
+@use 'abstracts/summary';
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/functions';
+
+@use 'base/reset';
+@use 'base/fonts';
+@use 'base/base';
+@use 'base/helpers';
+
+@use 'layout/grid';
+@use 'layout/header';
+@use 'layout/content';
+@use 'layout/footer';
+
+@use 'components/game';
+@use 'components/scores';
+@use 'components/timer';
+@use 'components/button';
+@use 'components/table';
+@use 'components/modal';

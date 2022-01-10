@@ -1,0 +1,61 @@
+/**
+ * __Table__
+ *
+ * Définit le style des tableaux
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as fn;
+
+table {
+  border-collapse: collapse;
+  margin-bottom: fn.add-line(2);
+  width: 100%;
+
+  th,
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.is-narrow {
+      width: 4rem;
+    }
+  }
+
+  thead {
+    th {
+      @include m.sizes("small", 1);
+
+      border-bottom: 1px solid v.$grey;
+      color: v.$grey;
+      line-height: calc(2rem - 1px);
+      padding: 0 0.25rem;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: v.$lighter;
+      }
+
+      &.border-success {
+        border-left: 4px solid v.$success;
+
+        td:first-child {
+          padding-left: 8px;
+        }
+      }
+    }
+
+    td {
+      padding: fn.add-line() 0.25rem;
+      vertical-align: top;
+
+      &.is-narrow {
+        color: lighten($color: v.$default, $amount: 50);
+      }
+    }
+  }
+}

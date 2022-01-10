@@ -1,0 +1,40 @@
+/**
+ * __GRID__
+ *
+ * Définit la mise en page générale du site (grid system)
+ */
+@use '../abstracts/variables' as v;
+
+#app {
+  display: grid;
+  grid-template-areas:
+    "head"
+    "content"
+    "foot";
+
+  > header,
+  > main {
+    height: calc(100vh - v.$footer-height);
+  }
+
+  > header {
+    grid-area: head;
+  }
+
+  > main {
+    grid-area: content;
+  }
+
+  > footer {
+    grid-area: foot;
+    height: v.$footer-height;
+  }
+
+  @media (min-width: v.$bp-large) {
+    grid-template-areas:
+      "head content"
+      "foot foot";
+
+    grid-template-columns: 1fr 2fr;
+  }
+}

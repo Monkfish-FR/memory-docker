@@ -1,0 +1,50 @@
+/**
+ * __TIMER__
+ *
+ * Définit le style du timer
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/functions" as fn;
+
+.timer {
+  // border: 1px solid v.$light;
+  background: v.$light;
+  border-radius: 4px;
+  min-height: fn.add-line(1);
+  margin: fn.add-line(2) auto;
+  padding: 2px;
+  position: relative;
+  width: 80%;
+
+  &::before {
+    border-bottom: 1px solid v.$light;
+    content: "";
+    height: 50%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__inner {
+    animation: countdown;
+    animation-duration: v.$timer-duration; /* La durée peut être écrasée par JS */
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-play-state: paused;
+    animation-timing-function: linear;
+    border-radius: 4px;
+    height: 100%;
+  }
+}
+
+@keyframes countdown {
+  0% {
+    background: v.$success;
+    width: 100%;
+  }
+  100% {
+    background: v.$error;
+    width: 0;
+  }
+}

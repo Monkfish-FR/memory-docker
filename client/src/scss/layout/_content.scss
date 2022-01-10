@@ -1,0 +1,41 @@
+/**
+ * __MAIN__
+ *
+ * Définit le style spécifique au corps de la page (<main />)
+ */
+@use "../abstracts/variables" as v;
+
+.main {
+  background: v.$secondary;
+  perspective: 1000px;
+  transition: transform ease-in-out 0.3s;
+  overflow: hidden;
+
+  &__content {
+    background: v.$white;
+    box-shadow: 0 4px 8px 0 rgba(v.$black, 0.5);
+    height: 100%;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    width: 100%;
+
+    &--flip {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .game,
+  .scores {
+    background: v.$white;
+    backface-visibility: hidden;
+    height: 85%;
+    position: absolute;
+    top: 7.5%;
+    width: 100%;
+  }
+
+  .scores {
+    transform: rotateY(180deg);
+  }
+}

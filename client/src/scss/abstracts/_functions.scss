@@ -1,0 +1,9 @@
+@use "commons" as c;
+
+/// @usage
+/// h1 {
+///   margin-bottom: add-line(2); // margin-bottom: 48px;
+/// }
+@function add-line($number: 1, $borders-width: 0) {
+  @return (map-get($map: c.$fs, $key: "line-default") * $number) - $borders-width;
+}

@@ -1,0 +1,42 @@
+/**
+ * __BASE__
+ *
+ * Définit le style de base de l'application
+ * (balises `html`, `body` et conteneur racine `#app`)
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+html,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  min-height: 100vh;
+}
+
+html {
+  @include m.sizes();
+}
+
+body {
+  @include m.sizes();
+
+  background: v.$white;
+  color: v.$default;
+  font-family: v.$font-sans;
+  margin: 0;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.t-center {
+  text-align: center;
+}

@@ -1,0 +1,58 @@
+/**
+ * __FONTS__
+ *
+ * Définit les polices de caractères
+ *
+ * @see `abstracts/_variables.scss`
+ * Les appels aux différentes polices sont variabilisés
+ * selon leur utilisation (serif, sans, code)
+ */
+@forward "icomoon" as icomoon-*;
+
+@font-face {
+  font-display: block;
+  font-family: "icomoon";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/icomoon/icomoon.woff?v=1") format("woff");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/playfairdisplay/PlayfairDisplay-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/playfairdisplay/PlayfairDisplay-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Code Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/sourcecodepro/SourceCodePro-Regular.ttf.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/sourcesanspro/SourceSans3-Regular.ttf.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../assets/fonts/sourcesanspro/SourceSans3-It.ttf.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/sourcesanspro/SourceSans3-Bold.ttf.woff2") format("woff2");
+}

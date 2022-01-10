@@ -1,0 +1,34 @@
+// Variables shared by variables, mixins and functions files
+// to avoid the loop conflict
+
+// Font-size and line-height
+$font-sizes: (
+  //"small": (
+  //  "default": 10px,
+  //),
+  "medium": (
+    "smaller": 10px,
+    "small": 13px,
+    "default": 16px,
+    "big": 21px,
+    "bigger": 26px,
+    "biggest": 34px,
+    "oversize": 55px,
+    "line-smaller": 16px,
+    "line-small": 24px,
+    "line-default": 24px,
+    "line-big": 32px,
+    "line-bigger": 32px,
+    "line-biggest": 48px,
+    "line-oversize": 72px,
+  )
+);
+
+$fs: map-get(
+  $map: $font-sizes,
+  $key: "medium",
+);
+$lh: map-get(
+  $map: $fs,
+  $key: "line-default",
+);

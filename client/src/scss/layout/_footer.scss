@@ -1,0 +1,14 @@
+/**
+ * __FOOTER__
+ *
+ * Définit le style spécifique au pied de page (<footer />)
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+footer {
+  @include m.sizes('small', 0, v.$footer-height);
+
+  font-family: v.$font-code;
+  text-align: center;
+}

@@ -1,0 +1,43 @@
+/**
+ * __BUTTON__
+ *
+ * Définit le style des boutons
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as fn;
+
+.button {
+  @include m.sizes("small", 2);
+
+  background: v.$white;
+  border: 1px solid v.$light;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  padding: 0 1em;
+  text-align: center;
+  transition: all 0.25s ease-out;
+  white-space: nowrap;
+
+  .t-center & {
+    margin: 0 auto;
+  }
+
+  &--primary {
+    background: v.$primary;
+    border-color: v.$primary;
+    color: v.$white;
+
+    &:not([disabled]):hover {
+      background: darken($color: v.$primary, $amount: 10);
+      border-color: darken($color: v.$primary, $amount: 10);
+      color: v.$white;
+    }
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.5;
+  }
+}

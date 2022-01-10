@@ -1,0 +1,40 @@
+{
+  "name": "memory-client",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "author": "Fabien TAVERNIER <contact@monkfish.fr>",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack serve --port 3000 --mode development --open --hot",
+    "build": "webpack --mode production",
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "imagesize": "^1.0.0",
+    "node-polyfill-webpack-plugin": "^1.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.7",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/preset-env": "^7.16.7",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.5.1",
+    "eslint": "8.2.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-plugin-import": "2.25.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.5",
+    "node-sass-json-importer": "^4.3.0",
+    "sass": "^1.45.2",
+    "sass-loader": "^12.4.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.7.2"
+  },
+  "proxy": "http://localhost:8080/"
+}

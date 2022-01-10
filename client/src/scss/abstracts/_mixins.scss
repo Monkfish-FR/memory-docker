@@ -1,0 +1,26 @@
+@use "commons" as c;
+
+/// @usage
+/// html { @include sizes(); } // output: html { font-size: 16px; line-height: 24px; }
+/// h1 {
+///   @include sizes('biggest'); // font-size: 34px; line-height: 48px;
+/// }
+/// footer {
+///   @include sizes('small', 0, 72px); // font-size: 13px; line-height: 72px;
+/// }
+///
+/// To add a set of sizes (eg 'small - default = 10px), add a small object
+/// $font-sizes below, then call it like that:
+/// .footer {
+///   font-size: map-get($font-sizes, 'small', 'default'); // output: 10px
+/// }
+///
+@mixin sizes($key: "default", $borders-width: 0, $line-height: 0) {
+  font-size: map-get($map: c.$fs, $key: $key);
+
+  @if $line-height == 0 {
+    line-height: map-get($map: c.$fs, $key: "line-#{$key}") - $borders-width;
+  } @else {
+    line-height: $line-height;
+  }
+}

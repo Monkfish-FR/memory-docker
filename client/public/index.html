@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Home @ Test O'clock — Fabien TAVERNIER</title>
+</head>
+
+<body>
+  <div id="app">
+    <header class="header container">
+      <h1>Jeu de mémoire</h1>
+
+      <div class="header__scroll small-only" id="headerScroll">
+        <i class="icon-circle-down"></i>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="main__content">
+        <div id="game" class="game container"></div>
+        <div id="scores" class="scores">
+          <h2>Les meilleurs temps</h2>
+
+          <div class="scores__table">
+            <table>
+              <thead>
+                <tr>
+                  <th class="is-narrow">Rang</th>
+                  <th>Score</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+
+              <tbody id="scoresData"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>© 2022 Fabien TAVERNIER @ O'clock</p>
+    </footer>
+  </div>
+</body>
+
+</html>

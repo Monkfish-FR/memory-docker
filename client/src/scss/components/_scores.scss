@@ -1,0 +1,26 @@
+/**
+ * __SCORES__
+ *
+ * Définit le style des scores
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as fn;
+
+.scores {
+  padding: fn.add-line(2);
+
+  h2 {
+    @include m.sizes("biggest");
+
+    font-family: v.$font-serif;
+    font-weight: 700;
+    height: fn.add-line(4);
+  }
+
+  &__table {
+    max-height: calc(100% - fn.add-line(4)); // h2.height
+    overflow: auto;
+  }
+
+}

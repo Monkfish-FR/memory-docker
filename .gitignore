@@ -1,0 +1,16 @@
+node_modules/
+
+public/fonts/
+public/main.css
+public/main.js
+public/main.css.map
+public/main.js.map
+
+*.BAK
+
+.vscode/*
+
+.DS_Store
+Thumbs.db
+
+yarn-error.log

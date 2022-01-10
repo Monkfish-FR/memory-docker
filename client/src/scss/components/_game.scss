@@ -1,0 +1,125 @@
+/**
+ * __GAME__
+ *
+ * Définit le style du jeu
+ */
+@use "../abstracts/variables" as v;
+@use "../abstracts/functions" as fn;
+
+.game {
+  width: 100%;
+
+  @media only screen and (max-width: (v.$bp-large - 1)) and (orientation: landscape) {
+    width: 66%;
+  }
+
+  &__board {
+    align-content: center;
+    background: v.$light;
+    border: 4px solid v.$light;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+
+    &--narrow {
+      width: 50%;
+    }
+  }
+
+  &__square {
+    position: relative;
+    text-align: center;
+
+    &__content {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.card {
+  background-color: transparent;
+  cursor: pointer;
+  height: 100%;
+  perspective: 1000px;
+  transition: transform ease-in-out 0.1s 0.3s;
+  width: 100%;
+
+  &__inner {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 100%;
+    pointer-events: none;
+    position: relative;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+    width: 100%;
+
+    &__front,
+    &__back {
+      backface-visibility: hidden;
+      border-radius: 4px;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+    }
+
+    &__front {
+      background: v.$grey;
+    }
+
+    &__back {
+      background: v.$white;
+      overflow: hidden;
+      transform: rotateY(180deg);
+    }
+  }
+
+  &--clicked,
+  &--found {
+    cursor: default;
+
+    .card__inner {
+      transform: rotateY(180deg);
+    }
+  }
+
+  &--found {
+    transform: scale(0.8);
+  }
+}
+
+.card-back {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .spacer {
+    height: auto;
+    width: 100%;
+  }
+
+  .sprite {
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 0;
+
+    &.sprite--wide {
+      min-width: none;
+      max-width: 100%;
+    }
+  }
+}
+
+@for $i from 1 to v.$number-of-items {
+  .card-back--#{$i} .sprite {
+    top: calc(-1 * (100% * $i));
+  }
+}
